@@ -7,7 +7,7 @@ This is a simple encoding scheme to combine any JSON object with any binary data
 * [javascript](https://github.com/quartzjer/lob-enc) (node and browserify)
 * [c](https://github.com/telehash/telehash-c/blob/master/src/lib/lob.h)
 
-It is common to also support [cloaking](e3x/cloaking.md) within a LOB library as a convenience.
+It is common to also support [cloaking](../e3x/cloaking.md) within a LOB library as a convenience.
 
 ## Definition
 
