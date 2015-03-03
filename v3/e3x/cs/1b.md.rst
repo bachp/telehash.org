@@ -1,0 +1,22 @@
+Cipher Set 1b
+=============
+
+    DRAFT - `Work In
+    Progress <https://github.com/telehash/telehash.org/issues/42>`__
+
+This is just a placeholder to define a hardware-accelerated friendly
+embedded CS.
+
+--------------
+
+The base algorithms used in this set are chosen to be supported by
+commonly available hardware-accelerated-crypto on embedded hardware.
+
+-  **ECC NIST-P256**
+-  **HMAC-SHA256**
+-  **AES-128-CTR**
+-  or `CCM <http://en.wikipedia.org/wiki/CCM_mode>`__ to replace CTR and
+   HMAC? Contiki has started a `hardware-driver layer providing
+   CCM <https://github.com/contiki-os/contiki/pull/557>`__
+
+    Inhereit from `CS1a <1a.md.rst>`__

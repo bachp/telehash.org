@@ -1,0 +1,22 @@
+802.15.4 - Device/Sensor RF Transports
+======================================
+
+There are a number of different transports that use
+`802.15.4 <http://en.wikipedia.org/wiki/IEEE_802.15.4>`__ framing,
+typically for embedded devices and sensor networks.
+
+Due to the nature of the low level RF framing, most of these transports
+have similar properties of a <127 byte frame and some minimal built-in
+per-frame acking and sequencing (low reliability).
+
+In most cases, `chunking <../lob/chunking.md.rst>`__ can be used to
+directly encode a packet to and from a series of frames between devices
+over these transports.
+
+-  `ZigBee <http://en.wikipedia.org/wiki/ZigBee>`__
+-  `Atmel Lightweight
+   Mesh <http://www.atmel.com/tools/lightweight_mesh.aspx>`__
+-  `CoAP <http://en.wikipedia.org/wiki/Constrained_Application_Protocol>`__
+   over 6LoWPAN / RPL
+-  `more... <http://en.wikipedia.org/wiki/Comparison_of_802.15.4_radio_modules>`__
+
