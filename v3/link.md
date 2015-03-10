@@ -17,7 +17,7 @@ Links can be in three states:
 * **down** - keys have been validated and at least one path is available (possibly through router), but the link is not connected
 * **up** - link has sent and received a handshake and is active
 
-<a name="json" />
+<a name="json"></a>
 ## JSON
 
 Many apps use JSON as an easy storage/exchange format for defining and sharing link data.  The only required standard for this is that each link is an object with two fields, a `keys` object and a `paths` array.  Apps may extend and customize the JSON as needed but should attempt to preserve those two fields to simplify what other tools and libraries can automatically detect and generate.
@@ -59,7 +59,7 @@ Links can be resolved from any string:
 
 Once resolved, preserve all paths for future use.  If resolved via a router, also generate and preserve a `peer` path referencing it.
 
-<a name="handshake" />
+<a name="handshake"></a>
 ## Handshake
 
 The handshake packet is of `"type":"link"` and contains an optional `"csid":"1a"` for use when not sent as a message (such as in a [peer](channels/peer.md)).  The `BODY` of the handshake is another encoded packet that contains the sender's hashname details.

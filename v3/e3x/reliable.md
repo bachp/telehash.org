@@ -5,7 +5,7 @@ Channel packets are by default only as reliable as the underlying transport itse
 
 Reliability is requested on a channel with the very first packet (that contains the `type`) by including a `"seq":1` with it, and a recipient must respond with an `err` if it cannot handle reliable channels.  Reliability must not be requested for channel types that are expected to be unreliable.
 
-<a name="seq" />
+<a name="seq"></a>
 ## `seq` - Sequenced Data
 
 The requirement for a reliable channel is always including a simple incrementing `"seq":1` positive integer value on every packet that contains any content (including the `end`). All `seq` values start at 1 with the open and increment per packet sent when it contains any data to be processed, with a maximum value of 4,294,967,295 (a 32-bit unsigned integer)
@@ -14,7 +14,7 @@ A buffer of these packets must be kept keyed by the seq value until the recipien
 
 The receiving app logic must only process sequenced packets and their contents in order, any packets received with a sequence value that is older than already processed ones must be dropped, and any of order must either be buffered or dropped depending on local resources available.  
 
-<a name="ack" />
+<a name="ack"></a>
 ## `ack` - Acknowledgements
 
 The `"ack":1` integer is included on outgoing packets as the highest known `seq` value confirmed as *delivered to the app* (as much as is possible to confirm quickly). What this means is that any library must provide a way to send data/packets to the app using it in a serialized way, and be told when the app is done processing one packet so that it can both confirm that `seq` as well as give the app the next one in order. Any outgoing `ack` must be the last processed `seq` so that the sender can confirm that the data was completely received/handled by the recipient.
@@ -25,7 +25,7 @@ An `ack` may also be sent in it's own packet ad-hoc at any point without any con
 
 When receiving an `ack` the recipient may then discard any buffered packets up to and including that matching `seq` id, and also confirm to the app that the included content data was received and processed by the other side.
 
-<a name="miss" />
+<a name="miss"></a>
 ## `miss` - Missing Sequences
 
 The `"miss":[1,2,4]` is an array of positive delta integers and must be sent along with any `ack` if in the process of receiving packets there are missing sequences. The array entries each represent a `seq` value calculated as the delta from the previous entry, using the accompanying `ack` as the initial base to start calculating from.

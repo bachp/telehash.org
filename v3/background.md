@@ -32,7 +32,7 @@ publish-subscribe, or message passing... any can be used, as telehash
 simply facilitates secure reliable connectivity between any two or more
 applications in any networking environment.
 
-<a name="name" />
+<a name="name"></a>
 # The Name
 
 The name is a simple combination of **tele** from telegraph, and **hash** from hashtable, and pronounced as the parts of those words normally would be.

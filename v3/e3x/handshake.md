@@ -4,7 +4,7 @@ A handshake is one or more encrypted [messages](messages.md) sent between two en
 
 Applications may send or expect more than one handshake message for additional authentication and authorization requirements beyond the basic endpoint key exchange. New handshakes are also triggered automatically for existing sessions as needed by the transport(s) in use to verify that the network paths are still valid and/or maintain any NAT mappings.
 
-The resulting size of encrypted handshake packets vary by which [Cipher Sets](cs/) are used combined with the type of inner packet, typically it ranges from ~70 to ~1100 bytes.
+The resulting size of encrypted handshake packets vary by which [Cipher Sets](cs/README.md) are used combined with the type of inner packet, typically it ranges from ~70 to ~1100 bytes.
 
 ## Resend/Timeout
 
@@ -43,7 +43,7 @@ If the maximum `at` value is ever reached/used the two hashnames cannot send any
 
 The handshake determines the exchange's `ROUTING TOKEN` value, which must always be the first 16 bytes of the encrypted outer message `BODY`.  The `ROUTING TOKEN` is not used cryptographically and is only a unique value to assist the two endpoints and any routing parties on mapping to a known exchange session.
 
-Each [Cipher Set](cs/) must structure their messages such that the first 16 bytes of the `BODY` are unique and remain stable for the lifetime of the exchange, typically being the exchange's public key bytes.
+Each [Cipher Set](cs/README.md) must structure their messages such that the first 16 bytes of the `BODY` are unique and remain stable for the lifetime of the exchange, typically being the exchange's public key bytes.
 
 Any handshake with a different `ROUTING TOKEN` and a higher `at` of an existing exchange for the same endpoint must clear any cached handshake messages or state stored for that exchange.
 

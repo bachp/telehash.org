@@ -12,7 +12,7 @@ A channel library should provide a `quota` method per packet for the app to dete
 
 ## Packet Encryption
 
-All channel packets are encrypted using a stream cipher as determined by the [Cipher Set](cs/) in use for the exchange.  The encrypted (OUTER) packets must have a `HEAD` of length 0 and the encrypted contents as the binary `BODY`.
+All channel packets are encrypted using a stream cipher as determined by the [Cipher Set](cs/README.md) in use for the exchange.  The encrypted (OUTER) packets must have a `HEAD` of length 0 and the encrypted contents as the binary `BODY`.
 
 Once decrypted they result in an INNER packet that must always contain valid JSON (have a `HEAD` of 7 or greater).
 
@@ -47,7 +47,7 @@ An example initial reliable channel open request:
 }
 ```
 
-<a name="states" />
+<a name="states"></a>
 ### Channel States
 
 A channel may only be in one of the following states:
@@ -60,7 +60,7 @@ These are the states that e3x manages, if an application requires additional sta
 
 Any channel in the `ENDED` state and has also sent an `end` is no longer available for any sending/receiving, but internal state will be tracked until the channel timeout for any necessary reliability retransmits/acknowledgements.
 
-<a name="ids" />
+<a name="ids"></a>
 ### Channel IDs
 
 A Channel ID is a *positive* integer (uint32_t) from 1 to 4,294,967,295 and is determined by the sender and then used by both sides to send/receive packets on that channel.  In order to prevent two endpoints from picking the same `c` value they choose them based on their [order](order.md): the `ODD` endpoint uses odd numbers starting with 1, and the `EVEN` endpoint uses even numbers starting with 2. 0 is never a valid ID.
@@ -71,7 +71,7 @@ When a new exchange is established, it errors any `OPEN` channels and sets the m
 
 If the maximum ID is reached the exchange must be regenerated, resetting it back to 1.
 
-<a name="timeouts" />
+<a name="timeouts"></a>
 ### Timeouts
 
 Every channel is responsible for it's own timeout and may have a different value than others.  A timeout occurs whenever the channel is in `OPENING` or `ENDED` state or when any packet has not been ack'd for reliable channels.

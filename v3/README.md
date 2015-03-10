@@ -25,11 +25,11 @@ The full protocol is a composite of different individual specifications:
 
 * [hashname](hashname.md) - public key fingerprint (address format)
 * [lob](lob.md) - length-object-binary, json+binary serialization (packetization)
-* [e3x](e3x/) - end-to-end encrypted exchange (wire encoding, crypto)
+* [e3x](e3x/README.md) - end-to-end encrypted exchange (wire encoding, crypto)
 * [link](link.md) - establishing and maintaining connections betweent two endpoints
 * [mesh](mesh.md) - higher level tools to manage multiple links and do local discovery
 * [uri](uri.md) - how to encode/decode endpoint info via URIs for out-of-band bootstrapping
-* [transports](transports/) - details (encoding, timeouts, discovery, etc) for mapping/supporting different network transports
+* [transports](transports/README.md) - details (encoding, timeouts, discovery, etc) for mapping/supporting different network transports
 * [logo](../logo/) - for use to represent telehash support in apps 
 
 ### Implementations

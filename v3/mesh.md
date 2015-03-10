@@ -1,9 +1,9 @@
 Mesh Network
 ============
 
-A mesh network consists of one or more [links](link.md), which are active [encrypted sessions](e3x/) between two endpoints over any [transport](transports/).  Each endpoint is identified with a unique [hashname](hashname.md), the fingerprint of it's public key(s).  A mesh is private to each endpoint, which has complete control over what links it accepts, there is no automatic sharing of any link state to any other link.
+A mesh network consists of one or more [links](link.md), which are active [encrypted sessions](e3x/README.md) between two endpoints over any [transport](transports/README.md).  Each endpoint is identified with a unique [hashname](hashname.md), the fingerprint of it's public key(s).  A mesh is private to each endpoint, which has complete control over what links it accepts, there is no automatic sharing of any link state to any other link.
 
-Once a link is up, [channels](channels/) are used to run common services over it:
+Once a link is up, [channels](channels/README.md) are used to run common services over it:
 
   * peer: request connection to an endpoint from a router
   * connect: incoming connection request relayed
@@ -55,13 +55,13 @@ Set the local endpoint discovery mode to on or off, when on this will tell any a
 
 ### Built-in and Custom Channels
 
-All implementations should strive to support as many [channels](channels/) as possible directly off of `mesh` and `link` objects using the language and patterns described in each channel definition.  For example, the [stream](channels/stream.md) channel should be supported with a simple `mesh.onStream` event to handle incoming requests and `link.stream()` to connect new streams (using a language-native streaming interface if possible).
+All implementations should strive to support as many [channels](channels/README.md) as possible directly off of `mesh` and `link` objects using the language and patterns described in each channel definition.  For example, the [stream](channels/stream.md) channel should be supported with a simple `mesh.onStream` event to handle incoming requests and `link.stream()` to connect new streams (using a language-native streaming interface if possible).
 
 Custom channels should be avoided whenever possible by using one of the built-in channels, and the API to create and handle custom channels is implementation specific.
 
 ## Discovery
 
-By default a local endpoint will never respond to any request unless it comes from another endpoint it already knows and trusts.  A `discover` mode can be enabled that changes this behavior and broadcasts the endpoint's hashname and keys to any local [network transport](transports/) that supports discovery.
+By default a local endpoint will never respond to any request unless it comes from another endpoint it already knows and trusts.  A `discover` mode can be enabled that changes this behavior and broadcasts the endpoint's hashname and keys to any local [network transport](transports/README.md) that supports discovery.
 
 This mode should be used sparingly so that local networks cannot record what endpoints are available, typically only enabled based on a user behavior ("add a friend" or "pair device", etc) and only for a short period of time.  Permanent local services/servers that support dynamic association may have it always enabled.
 

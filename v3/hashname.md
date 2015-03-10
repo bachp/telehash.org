@@ -1,6 +1,6 @@
 # Hashnames
 
-A `hashname` is a unique fingerprint to represent the union of one or more public keys of different formats ([Cipher Sets](e3x/cs/)), providing consistent verifiable endpoint addresses utilizing multiple PKI systems. This enables a compatibility layer for adding or enhancing PKI in any application so that it can still represent itself securely to both existing and new endpoints.
+A `hashname` is a unique fingerprint to represent the union of one or more public keys of different formats ([Cipher Sets](e3x/cs/README.md)), providing consistent verifiable endpoint addresses utilizing multiple PKI systems. This enables a compatibility layer for adding or enhancing PKI in any application so that it can still represent itself securely to both existing and new endpoints.
 
 In many ways, a `hashname` can be viewed as a portable secure [MAC address](http://en.wikipedia.org/wiki/MAC_address), it is a globally unique identifier for a network endpoint that is also self-generated and cryptographically verifiable.
 
@@ -17,7 +17,7 @@ Base32 encoding was chosen to maximize compatibilty and consistency, such that i
 
 ## Hashname Generation
 
-A hashname is calculated by combining one or more Cipher Set Keys ([CSK](e3x/cs/)) through multiple rounds of [SHA-256](http://en.wikipedia.org/wiki/SHA-2) hashing.
+A hashname is calculated by combining one or more Cipher Set Keys ([CSK](e3x/cs/README.md)) through multiple rounds of [SHA-256](http://en.wikipedia.org/wiki/SHA-2) hashing.
 
 The generation has three distinct steps, all of them operating on binary/byte inputs and outputs:
 

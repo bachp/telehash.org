@@ -8,7 +8,7 @@ It is designed to be used as a low-level software library that can be embedded i
 ## Index
 
 * [packet](../lob.md) - all binary and JSON data encoding/encapsulation
-* [Cipher Sets](cs/) - asynchronous and streaming encryption, multiple keys
+* [Cipher Sets](cs/README.md) - asynchronous and streaming encryption, multiple keys
 * [message](messages.md) - an asynchronous encrypted packet between two endpoints
 * [handshake](handshake.md) - a type of message used to establish a streaming encryption session for channels
 * [channel](channels.md) - small (max 1400 bytes) synchronous encrypted packets, proxies larger reliable and unreliable data streams

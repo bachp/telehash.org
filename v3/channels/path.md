@@ -42,7 +42,7 @@ To handle a new `path` request, a response packet must be sent back to to every 
 }
 ```
 
-<a name="paths" />
+<a name="paths"></a>
 ## Path Types
 
 The information about an available network transport is encoded as a JSON object that contains a `"type":"..."` to identify which type of network it describes. The current path types defined are:
